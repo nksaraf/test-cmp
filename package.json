@@ -13,6 +13,7 @@
     "@tanstack/solid-query": "^5.15.0",
     "autoprefixer": "^10.4.14",
     "dayjs": "^1.11.10",
+    "media-icons": "^0.10.0",
     "postcss": "^8.4.26",
     "rosetty": "^2.0.10",
     "rosetty-solid": "link:/home/quentin/Documents/dev/rosetty-solid",
@@ -20,7 +21,8 @@
     "solid-start-cmp": "github:qlaffont/solid-start-cmp",
     "tailwindcss": "^3.3.3",
     "unplugin-imagemin": "^0.5.15",
-    "vinxi": "0.0.54",
+    "vidstack": "^1.9.8",
+    "vinxi": "0.0.56",
     "vite-multiple-assets": "^1.2.9"
   },
   "engines": {
