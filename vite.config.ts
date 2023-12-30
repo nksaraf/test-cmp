@@ -1,22 +1,19 @@
-import {defineConfig} from "@solidjs/start/config";
-import legacy from '@vitejs/plugin-legacy';
-import devtools from 'solid-devtools/vite';
+import { defineConfig } from "@solidjs/start/config";
+import legacy from "@vitejs/plugin-legacy";
+import devtools from "solid-devtools/vite";
 
+// import imagemin from "unplugin-imagemin/vite";
 
-import DynamicPublicDirectory from 'vite-multiple-assets';
-import imagemin from 'unplugin-imagemin/vite';
-
-export default defineConfig({
+const app = defineConfig({
   start: {
-    ssr: false
+    ssr: false,
   },
-  optimizeDeps:{
-    exclude: ['rosetty-solid', 'rosetty']
+  optimizeDeps: {
+    exclude: ["rosetty-solid", "rosetty"],
   },
   plugins: [
-    DynamicPublicDirectory(['node_modules/solid-start-cmp/public','public']),
     legacy({
-      targets: ['defaults','not IE 11'],
+      targets: ["defaults", "not IE 11"],
     }),
     devtools({
       /* features options - all disabled by default */
@@ -44,3 +41,12 @@ export default defineConfig({
     // }),
   ],
 });
+
+app.addRouter({
+  mode: "static",
+  name: "solid-start-cmp",
+  dir: "node_modules/solid-start-cmp/public",
+  base: "/",
+});
+
+export default app;
